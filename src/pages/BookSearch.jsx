@@ -1,11 +1,13 @@
 // src/components/BookSearch.js
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './bookSearch.css'
 
 const BookSearch = ({ addToBookshelf }) => {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
+  const navigate=useNavigate();
 
   useEffect(() => {
     if (query) {
@@ -33,7 +35,7 @@ const BookSearch = ({ addToBookshelf }) => {
         onChange={(e) => setQuery(e.target.value)} 
         placeholder="Search for a book..." 
       />
-      <button onClick={() => window.location.href = '/bookshelf'} className='button'>Go to My Bookshelf</button>
+      <button onClick={() => navigate('/bookshelf')} className='button'>Go to My Bookshelf</button>
       <div className='card-container'>
         {results.map((book) => (
           <div key={book.key} className="book-card">

@@ -21,7 +21,7 @@ const Bookshelf = () => {
       <h1 className='title'>My Bookshelf</h1>
       <button onClick={() => window.location.href = '/'} className='button'>Back to Search</button>
       {bookshelf.length === 0 ? (
-        <p>No books in the bookshelf.</p>
+        <p style={{color:'white',fontWeight:'bold',fontSize:'2rem'}}>No books in the bookshelf.</p>
       ) : 
       (
         <div className="card-container">
